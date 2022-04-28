@@ -26,11 +26,10 @@ function addProject(item) {
   content.appendChild(li);
 
   link.setAttribute("href", projUrl);
-  link.appendChild(linkText)
-  console.log(link)
+  link.appendChild(linkText);
+  console.log(link);
 
   li.textContent = projLabel + " - ";
   li.appendChild(link);
-  
-  
 }
+
