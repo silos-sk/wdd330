@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Quiz Ninja</title>
-
-    <style>
-      @import url("https://fonts.googleapis.com/css?family=Baloo+Da|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Baloo+Da|Roboto");
 
       body {
         background: #5f1c1c;
@@ -61,38 +55,4 @@
         color: #fff;
         background-color: #c00;
       }
-    </style>
-  </head>
-
-  <body>
-    <section class="dojo">
-      <div class="quiz-body">
-        <header>
-          <h1>Quiz Ninja!</h1>
-        </header>
-      </div>
-    </section>
-    <script>
-      const quiz = [
-        ["What is Superman's real name?", "Clark Kent"],
-        ["What is Wonder Woman's real name?", "Diana Prince"],
-        ["What is Batman's real name?", "Bruce Wayne"],
-      ];
-
-      let score = 0;
-
-      for (const [question, answer] of quiz) {
-        const response = prompt(question);
-        if (response === answer) {
-          alert("Correct!");
-          score++;
-        } else {
-          alert(`Wrong! The correct answer was ${answer}`);
-        }
-      }
-
-      // At the end of the game, report the player's score
-      alert(`Game Over, you scored ${score} point${score > 1 ? "s" : ""}`);
-    </script>
-  </body>
-</html>
+  
