@@ -1,28 +1,46 @@
-alert('Welcome to Quiz Ninja!');
+alert("Welcome to Quiz Ninja!");
 
 // Set the questions
-const quiz = new Map([
-    ["What is Superman's real name?","Clark Kent"],
-    ["What is Wonderwoman's real name?","Dianna Prince"],
-    ["What is Batman's real name?","Bruce Wayne"]
-  ]);
+const quiz = [
+  ["What is Superman's real name?", "Clark Kent"],
+  ["What is Wonderwoman's real name?", "Dianna Prince"],
+  ["What is Batman's real name?", "Bruce Wayne"],
+];
 
- // initialize score
-let score = 0;
+function start(quiz) {
+  // initialize score
+  let score = 0;
+}
 
-for(const [question,answer] of quiz.entries()){
-
+// main game loop
+for (const [question, answer] of quiz) {
   // get answer from user
-  const response = prompt(question);
-  // check if answer is correct
-  if(response === answer){
-    alert('Correct!');
-    // increase score by 1
+  const response = ask(question);
+  check(response, answer);
+}
+
+// end of main game loop
+
+gameOver();
+
+// function declarations
+
+function ask(question) {
+  return prompt(question);
+}
+
+function check(response, answer) {
+  if (response === answer) {
+    alert("Correct");
     score++;
   } else {
-    alert(`Wrong! The correct answer was ${answer}`);
+    alert(`wrong! The correct answer was ${answer}`);
   }
 }
 
-// At the end of the game, report the player's score
-alert(`Game Over, you scored ${score} point${score > 1 ? 's' : ''}`);
+function gameOver() {
+  // At the end of the game, report the player's score
+  alert(`Game Over, you scored ${score} point${score !== 1 ? "s" : ""}`);
+}
+
+start(quiz);

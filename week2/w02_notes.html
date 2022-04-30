@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W01 Notes - Shaira Silos - WDD330</title>
+    <meta
+    name="description"
+    content="Week 2 Notes - Shaira Silos in WDD 330: Web Frontend Development II at BYUI"
+  />
+    <!-- STYLESHEETS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="../css/small.css" />
+    <link rel="stylesheet" href="..css/medium.css" />
+    <link rel="stylesheet" href="..css/large.css" />
+  </head>
+  <body>
+    <main>
+    <h1>Shaira Silos - WDD330 Portfolio</h1>
+    <h2>Week 2 Notes</h2>
+    
+    <section>
+        <h3>JavaScript Novice to Ninja:</h3>
+        <h4>Chapter 2 - Programming Basics</h4>
+        <p>
+<b>6 Primitive Data Types:</b><br/>
+<ul>
+  <li>Strings </li>
+  <li>Symbols - immutable</li>
+  <li>Numbers</li>
+  <li>Booleans - true or false</li>
+  <li>Null - no value; behaves like 0</li>
+</ul>
+
+<b>Non-primitive Data Types (objects):</b>
+<ul>
+  <li>Arrays</li>
+  <li>Functions</li>
+  <li>Objects</li>
+</ul>
+
+<b>Variable declaration:</b> const, let<br/><br/>
+
+<b>Comments:</b><br/>
+// short<br/>
+/* */ multi-line long<br/><br/>
+
+<b>Type Coercion:</b><br/>
+TypeScript - strong-typed - provides option to specify the type of variables explicitly when they are declared<br/><br/>
+
+JavaScript - weakly typed language - don't need to explicitly specify data-type of variable<br/><br/>
+
+<b>Scope:</b><br />
+Global - applies to variables declared outside of a block<br />
+Local - inside a block<br /><br />
+
+Undefined: variables with no assigned values<br /><br />
+
+Soft equality: ==<br />
+Hard equality: ===<br /><br />
+<hr />
+
+<h4>Chapter 3 - Arrays, Logic, Loops</h4> 
+
+<b>Arrays:</b><br />
+.slice - remove items from array with start & finish positions (non-destructive)<br />
+.splice - remoives items and inserts new items; (destructive)changes array permanently<br /><br />
+
+Sets: OL of non-duplicate values<br /><br />
+Maps: OL of key-value pairs<br />
+If/else<br />
+Switch - value being compared in parenthesis, case - each possible value<br />
+While / do...while<br />
+for loop (initialization; condition; after) {do something}<br />
+for of loop<br /><br />
+
+<hr />
+<h4>Chapter 4 - Functions</h4>
+
+Function literals defined by:<br />
+<b>function declaration</b> - function name(parameter){} - can be invoked before defined as they are hoisted on top o the scope<br />
+<b>function expression</b> - let variable = function(){} - can only be invoked after they are defined<br /><br />
+
+name(argument) <br />
+rest operator - access multiple arguments as an array<br />
+arrow functions - const square = x => x*x<br />
+callback - function name(argument1, function) - function provided as an argument <br />
+DRY - Don't Repeat Yourself<br /><br />
+
+<b>Array Iterators:</b><br />
+<b>map()</b> - [1,2,3].map(square) iterates over an array and takes a callback function as a parameter that is invoked on each item in the array<br /><br />
+
+<b>reduce()</b> - [1,2,3,4,5].reduce((acc,val) => prev + val); - cumulatively combines each result to return just a single value<br /><br />
+
+<b>filter()</b> - numbers.filter (x => x%2 === 0) - returns a new array that only contains items from he original array that return true when passed to the callback
+</p>
+    </section>
+   
+</main>
+    <footer>&copy; 2022 | Shaira Silos</footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
