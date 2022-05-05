@@ -27,21 +27,62 @@
         <h3>JavaScript Novice to Ninja:</h3>
          <!-- CHAPTER 5-->
         <h4>Chapter 5 - Objects</h4>
-        <p>
-
+        <p><strong>Objects</strong> - key-value pairs inside {}; mutable; can be used as parameters to functions;&nbsp; copied by reference<br /><strong>Object Method </strong>- function property inside object</p>
+<p><strong>&gt; Creating Objects:</strong><br />Object literal&nbsp;<br />const spiderman = {}</p>
+<p>Constructor function<br />const spiderman = new Object();&nbsp;</p>
+<p>Shorthand - if property key same as property value<br />const ironMAn = {name, realName}</p>
+<p><strong>&gt; Accessing Objects</strong><br />Access Objects: (dot notation or bracket)<br />Object.property or Object['property']</p>
+<p><strong>&gt; Calling Methods</strong><br />Object.method() or Object['method']()</p>
+<p><strong>&gt; Check of Properties/Methods Exist</strong></p>
+<p><strong>* Returns true even if property inherited from another object:</strong><br />'property' in object<br />object.property !== undefined</p>
+<p><strong>* Only return property that belongs that particular object:</strong><br />object.hasOwnProperty('property')</p>
+<p><strong>* Find all Properties of an Object</strong><br />for (const key in object){<br />&nbsp; &nbsp; console.log(key + ": " + object[key]);<br />}</p>
+<p>* <strong>Only own properties returned:</strong><br />for (const key in object){<br />if (object.hasOwnProperty(key)){<br />&nbsp; &nbsp; console.log(key + ": " + object[key]);<br />}<br />}</p>
+<p><strong>Object.keys() </strong>- returns an array of all the keys of any object provided as an argument<br />for(const key of Object.keys(superman)){<br />console.log(key);<br />}<br />&lt;&lt; name<br />real name<br />height...</p>
+<p><strong>Object.values() </strong>- array of all object's value<br />for(cons value of Object.values(superman)){<br />console.log(value);<br />}</p>
+<p>&lt;&lt; Superman<br />Clark Kent<br />75</p>
+<p><strong>Object.entries() </strong>- returns key-value pairs array<br />for(const [key,value] of Object.entries(superman)){<br />console.log(`${key}: ${value}`);<br />}</p>
+<p>name: Superman<br />real name: Clark KEnt<br />height: 75</p>
+<p><strong>&gt; Adding Properties</strong><br />superman.city = 'Metropolis'</p>
+<p><strong>&gt; Changing Properties</strong><br />superman['real name'] = 'Kal-El';</p>
+<p><strong>&gt; Removing Properties</strong><br />delete superman.fly</p>
+<p><strong>&gt; Nested Objects</strong><br />object within objects</p>
+<p>const jla = { superman: {realName: 'Clark Kent'}, batman: {realName: 'Bruce Wayne'}</p>
+<p>jla.superman.realName<br />jla.batman['realName']</p>
+<p><strong>&gt; this</strong> - object that it is within</p>
+<p><strong>&gt; Built-in Objects</strong><br /><strong>JSON </strong>- Javascript Object Notation; functions not permitted<br />const batman = '{"name": "Batman"}'</p>
+<p><strong>JSON.parse()</strong> - JSON format to JavaScript object<br /><strong>JSON.stringify() </strong>- JS Object to JSON format</p>
+<p><strong>Math object</strong> - for calculations or constants<br />Math.abs() - aboslute +value of number<br />Math.ceil() - rounds up to next int or same if already int (4.2 &lt;&lt; 5)<br />Math.floor() - round down to next int or same if already int (4.2 &lt;&lt; 4)<br />Math.round() - round to nearest int (4.499 &lt;&lt; 4)<br />Math.trunc() - truncated at decimal point (4.9 &lt;&lt; 4)<br />Math.random() - generate number between 0 (inclusive) and 1 (exclusive)<br />to generate bet 0 and specific num: num * Math.random()<br />to generate random int: Math.floor(num * Math.random())</p>
+<p><strong>Date object </strong>- create date objects; getter, setter methods<br /><strong>Regex</strong> - create regular expressions<br />any / /<br />range [a-z] [A-Z]<br />/[^A-Z]/ : not a capital letter<br />g global<br />i ignoreCase<br />m multiline</p>
+<p><strong>* Special Characters </strong>(See page 235)<br />.(any char except line breaks)&nbsp;<br />\w(any word char)&nbsp;<br />\W(any non-word char)&nbsp;<br />\d(any digit)&nbsp;<br />\D(any non-digit)&nbsp;<br />\s(any white)</p>
+<p><strong>* Modifiers</strong> (see page 236)<br />? optional<br />* &nbsp;or + match one or more occurences of preceding token<br />...<br />^ immediately before the first char in string<br />$ immediately after the last char in string</p>
+<p><strong>* String Methods using regexp</strong><br />.split() .match() .search() .replace()</p>
         <hr />
 
         <!-- CHAPTER 6-->
         <h4>Chapter 6 - Document Object Model</h4> 
-
+        <p><strong>DOM</strong> - tree of nodes</p>
+        <p><strong>Access Elements:</strong><br />document.getElementById() .getElementsByClassName() .getElementsByTagName() .querySelector() .querySelectorAll()</p>
+        <p><strong>Access nodes:</strong><br />parentNode() previousSibling() nextSibling() childNodes() children()<br />firstChild lastChild</p>
+        <p><strong>Element Attributes:</strong> get/setAttribute() className/List</p>
+        <p><strong>Create Dynamic Markup:</strong><br />createElement() createtextNode()</p>
+        <p>appendChild() insertBefore()</p>
+        <p>replaceChild(newText, oldText) removeChild()</p>
+        <p>textContent innerHTML</p>
+        <p><strong>CSS (style)</strong> - camelCase<br />getComputedStyle()</p>
 
         <hr />
 
          <!-- CHAPTER 7-->
         <h4>Chapter 7 - Events</h4>
-
-        original array that return true when passed to the callback
-        </p>
+        
+        <p><strong>Events</strong> - user interaction with webpage<br /><strong>Event listener </strong>- addEventListener('click', doSomething)<br /><strong>Event target</strong> - reference to node that fired the event<br /><strong>Event coordinates </strong>- screenX screenY, clientX clientY(usually browser window), pageX pageY (document)</p>
+        <p><strong>Event types:</strong><br /><strong>Mouse events </strong>- click, dblclick, mouseover<br /><strong>Keyboard events</strong> - keydown (key pressed/held down), keypress (keys that produce input), keyup (key release);</p>
+<p>Modifier keys(Shift, Ctrl, Alt, Meta/Cmd in Mac - keydown/up but not keypress as no character produced)<br /><strong>Touch events </strong>- touchstart/end, touchmove, touchenter, touchleave, touchcancel</p>
+<p>removeEventListener()</p>
+<p>preventDefault()</p>
+<p><strong>Event propagation</strong> - order of events fired on element (Capturing, Bubbling)</p>
+<p><strong>Event delegation</strong> - event listener in parent element capture events to children elements</p>
     </section>
    
 </main>
