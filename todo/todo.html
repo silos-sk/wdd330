@@ -10,32 +10,28 @@
   <body>
     <h1>Todos</h1>
     <section>
+      <div class="addTodo"><input type="text" id="todo" name="todo" placeholder="Write something to do...">
+        <button class="addBtn">+</button></div>
       <ul>
-        <li>
-            <span>&#9746;</span>
-            <span class="hidden">&#9744;</span><span class="task">Task</span
-          ><span class="del">&#10005;</span>
-        </li>
-        <li>
-            <span class="hidden">&#9746;</span>
-            <span>&#9744;</span><span class="task"> Task</span
-          ><span class="del">&#10005;</span>
-        </li>
-        <li>
-            <span class="hidden">&#9746;</span>
-            <span>&#9744;</span><span class="task"> Task</span
-          ><span class="del">&#10005;</span>
-        </li>
-        <li><span id="tasksLeft"></span>tasks left
-            <span id="allT">All</span>
-            <span id="activeT">Active</span>
-            <span id="completedT">Completed</span></li>
+        <!-- <li>
+          <i class="fa-regular fa-square"></i>
+          <!-- <i class="fa-regular fa-square-check"></i> -->
+           <!-- </i>Task
+            <i class="fa-solid fa-xmark del"></i>
+        </li> -->
+        
       </ul>
-      <div class="addTodo"><input type="text">
-    <button>+</button></div>
+
+      <div class="filter"><span id="tasksLeft"></span>tasks left
+        <span id="allT">All</span>
+        <span id="activeT">Active</span>
+        <span id="completedT">Completed</span></div>
+      
       
       <!-- <span>&#9746;</span> -->
       <!-- <span>&#9744;</span> -->
     </section>
+    <script src="js/main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/3ea636a8a6.js" crossorigin="anonymous"></script>
   </body>
 </html>

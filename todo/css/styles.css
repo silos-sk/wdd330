@@ -38,11 +38,11 @@ ul {
 ul li {
   list-style: none;
   padding: 1rem;
-  padding: 1rem;
   background-color: white;
   border: 1px solid grey;
+  border-bottom: 0;
   display: grid;
-  grid-template-columns: 0.1fr 1fr 0.1fr;
+  grid-template-columns: 0.2fr 1fr 0.1fr;
 }
 
 /* span.box { 
@@ -70,8 +70,12 @@ span.del{
 } */
 
 ul li:last-child {
-    display: flex;
-    justify-content: space-around;
+    border-bottom: 1px solid grey;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-around;
 }
 
 .del {
@@ -82,7 +86,6 @@ ul li:last-child {
 .addTodo{
     display: flex;
     justify-content: center;
-    margin-top: 70%;
 }
 
 input {
