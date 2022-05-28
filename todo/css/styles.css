@@ -102,3 +102,8 @@ button {
 .completed {
   text-decoration: line-through;
 }
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: red;
+}

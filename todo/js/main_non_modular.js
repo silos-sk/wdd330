@@ -6,16 +6,6 @@ let del = "fa-solid fa-xmark del";
 let checkbox = "&#9744;";
 let checked = "&#9746;";
 
-window.onload = (event) => {
-  // //** Tasks Counter on Load **/
-  let liList = document
-    .querySelector(".todosEntries")
-    .getElementsByTagName("li");
-  let liLength = liList.length;
-
-  document.querySelector(".tasks").textContent = liLength;
-};
-
 //*** Get previously saved todo list ***
 // read previous tasks. If no tasks were found, start with an empty list
 let savedTasks = JSON.parse(localStorage.getItem("todos")) || [];
@@ -53,7 +43,7 @@ addBtn.addEventListener("click", function () {
 
     let localSet = localStorage.setItem("todos", JSON.stringify(todosList));
   }
-  return count
+  return count;
 });
 
 //*** Clear input field after adding todo ***/
@@ -80,8 +70,8 @@ if (todosEntries.children.length != 0) {
       e.target.parentElement.remove();
 
       //Reduce counter of tasks left
-      if (count > 0){
-        count--
+      if (count > 0) {
+        count--;
       }
       //Display counter in html
       const tasksLeft = document.querySelector("#tasksLeft");
@@ -90,11 +80,75 @@ if (todosEntries.children.length != 0) {
   });
 
   //** Complete todo **
-  const unchecked = document.querySelector(".fa-square");
+  const unchecked = document.querySelectorAll(".fa-regular");
+
+  console.log(unchecked);
 
   // toggle strike-through style on completed task
-  unchecked.addEventListener("click", function (e) {
-    e.target.classList.toggle("fa-square-check");
-    e.target.nextSibling.classList.toggle("completed");
+  unchecked.forEach((unchecked) => {
+    unchecked.addEventListener("click", function (e) {
+      e.target.classList.toggle("fa-square-check");
+      e.target.parentElement.classList.toggle("completed");
+    });
   });
 }
+
+//** FOOTER **/
+const active = document.querySelector(".active");
+const all = document.querySelector("#all");
+const activeTask = document.querySelector("#active");
+const completedTask = document.querySelector("#completed");
+
+activeTask.addEventListener("click", function () {
+  activeTask.classList.add("active");
+  all.classList.remove("active");
+  completedTask.classList.remove("active");
+
+  const li = document.querySelectorAll("li.completed");
+  li.forEach( li => { li.classList.add("hidden")})
+
+  const activeLi = document.querySelectorAll("li:not(.completed")
+  activeLi.forEach( activeLi => { activeLi.classList.remove("hidden")})
+
+  document.querySelector(".tasks").textContent = activeLi.length;
+
+});
+
+completedTask.addEventListener("click", function () {
+  completedTask.classList.add("active");
+  activeTask.classList.remove("active");
+  all.classList.remove("active");
+
+  const li = document.querySelectorAll("li");
+  li.forEach( li => { li.classList.add("hidden")})
+  const completeLi = document.querySelectorAll("li.completed")
+  completeLi.forEach(completeLi => {completeLi.classList.remove("hidden")})
+
+  document.querySelector(".tasks").textContent = completeLi.length;
+});
+
+all.addEventListener("click", function () {
+  all.classList.add("active");
+  activeTask.classList.remove("active");
+  completedTask.classList.remove("active");
+
+  const li = document.querySelectorAll("li");
+  li.forEach( li => { li.classList.remove("hidden")})
+
+  document.querySelector(".tasks").textContent = li.length;
+});
+
+
+
+//** Load local storage todos and update counter */
+window.onload = (event) => {
+  // //** Tasks Counter on Load **/
+  let liList = document
+    .querySelector(".todosEntries")
+    .getElementsByTagName("li");
+  let liLength = liList.length;
+
+  document.querySelector(".tasks").textContent = liLength;
+};
+
+
