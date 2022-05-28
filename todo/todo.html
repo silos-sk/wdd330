@@ -10,28 +10,39 @@
   <body>
     <h1>Todos</h1>
     <section>
-      <div class="addTodo"><input type="text" id="todo" name="todo" placeholder="Write something to do...">
-        <button class="addBtn">+</button></div>
-      <ul>
+      <div class="addTodo">
+        <input
+          type="text"
+          id="todo"
+          name="todo"
+          placeholder="Write something to do..."
+        />
+        <button class="addBtn">+</button>
+      </div>
+      <ul class="todosEntries">
         <!-- <li>
           <i class="fa-regular fa-square"></i>
-          <!-- <i class="fa-regular fa-square-check"></i> -->
-           <!-- </i>Task
+          <i class="fa-regular fa-square-check"></i>
+        </i>Task
             <i class="fa-solid fa-xmark del"></i>
         </li> -->
-        
       </ul>
 
-      <div class="filter"><span id="tasksLeft"></span>tasks left
+      <div class="filter">
+        <span id="tasksLeft" class="tasks"></span>tasks left
         <span id="allT">All</span>
         <span id="activeT">Active</span>
-        <span id="completedT">Completed</span></div>
-      
-      
+        <span id="completed">Completed</span>
+      </div>
+
       <!-- <span>&#9746;</span> -->
       <!-- <span>&#9744;</span> -->
     </section>
-    <script src="js/main.js" type="module"></script>
-    <script src="https://kit.fontawesome.com/3ea636a8a6.js" crossorigin="anonymous"></script>
+    <!-- <script src="js/main.js" type="module"></script> -->
+    <script src="js/main_non_modular.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3ea636a8a6.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

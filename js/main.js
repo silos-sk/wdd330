@@ -22,8 +22,8 @@ const projectList = [
     url: "week5/index.html",
   },
   {
-    label: "Week 6 Notes",
-    url: "week6/index.html",
+    label: "Week 6 challenge",
+    url: "todo/todo.html",
   },
   {
     label: "Week 7 Notes",

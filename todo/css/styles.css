@@ -11,28 +11,28 @@ body {
 
 body {
   font-size: 16px;
-  font-family: "Georgia", sans-serif;
+  font-family: "Arial", sans-serif;
   letter-spacing: 1px;
   margin: 0 auto;
-  max-width:400px;
+  max-width: 400px;
   background-color: yellow;
   padding: 1rem;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 h1 {
+  font-family: "Georgia", sans-serif;
   text-align: center;
 }
 
 ul {
-    list-style-type: none;
-    padding-left: 0;
-
+  list-style-type: none;
+  padding-left: 0;
 }
 
 ul li {
@@ -41,36 +41,21 @@ ul li {
   background-color: white;
   border: 1px solid grey;
   border-bottom: 0;
-  display: grid;
-  grid-template-columns: 0.2fr 1fr 0.1fr;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-/* span.box { 
-  content:&#x2610;
+li span {
+  margin: 0 1rem;
 }
 
-span.done {
-    content: "\9746";
-} */
-
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-
-/* span {
-    margin: 0 0.2rem;
-}
-
-span.del{
-    margin-left: 75%;
-} */
-
-/* ul li:last-child span{
-    margin: 0 0.5rem;
-} */
 
 ul li:last-child {
-    border-bottom: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
 .filter {
@@ -79,20 +64,41 @@ ul li:last-child {
 }
 
 .del {
-    margin-left: 2rem;
-    color: red;
+  margin-left: 2rem;
+  color: red;
 }
 
-.addTodo{
-    display: flex;
-    justify-content: center;
+.del:hover {
+  color: blue;
+}
+
+.addBtn {
+  font-size: 1.5rem;
+  border: 2px solid grey;
+  border-left: none;
+}
+
+.addTodo {
+  display: flex;
+  justify-content: center;
 }
 
 input {
-    width: 100%;
-    height: 40px;
+  width: 100%;
+  height: 40px;
+  padding: 1rem;
+  border: 2px solid grey;
+  border-right: none;
+}
+
+input:focus {
+  outline: yellow;
 }
 
 button {
-    width: 10%;
+  width: 10%;
+}
+
+.completed {
+  text-decoration: line-through;
 }
