@@ -1,11 +1,5 @@
 const todosList = [];
 
-// let checkbox = "fa-regular fa-square";
-// let checked = "fa-regular fa-square-check";
-let del = "fa-solid fa-xmark del";
-let checkbox = "&#9744;";
-let checked = "&#9746;";
-
 //*** Get previously saved todo list ***
 // read previous tasks. If no tasks were found, start with an empty list
 let savedTasks = JSON.parse(localStorage.getItem("todos")) || [];
@@ -54,7 +48,7 @@ function clearInput() {
 //** When task list is not empty **/
 const todosEntries = document.querySelector(".todosEntries");
 
-if (todosEntries.children.length != 0) {
+if (todosEntries.children) {
   //*** Remove todo ***/
   todosEntries.addEventListener("click", (e) => {
     if (e.target.classList.contains("del")) {
