@@ -83,6 +83,7 @@ if (todosEntries.children) {
     unchecked.addEventListener("click", function (e) {
       e.target.classList.toggle("fa-square-check");
       e.target.parentElement.classList.toggle("completed");
+      e.target.nextElementSibling.classList.toggle("strike");
     });
   });
 }

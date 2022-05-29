@@ -54,12 +54,19 @@ ul {
 ul li {
   list-style: none;
   padding: 1rem;
-  background-color: white;
+  background: rgb(238,174,202);
+background: linear-gradient(300deg, rgba(250, 190, 216, 0.5) 0%, rgba(255,255,255,0.9) 50%, rgba(238,174,202,0.5) 100%);
   border: 1px solid grey;
   border-bottom: 0;
   display: grid;
   grid-template-columns: 0.1fr 1fr 0.1fr;
   width: 100%;
+  color:#04172c;
+}
+
+i {
+  color: white;
+  font-size: 1.1rem;
 }
 
 .hidden {
@@ -112,8 +119,9 @@ button {
   width: 10%;
 }
 
-.completed {
+.strike {
   text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.8);
 }
 
 .active {
