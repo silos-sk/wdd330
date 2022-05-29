@@ -31,11 +31,11 @@ addBtn.addEventListener("click", function () {
     //if input field not empty, add todo to list
     todoTemplate(inputVal); // add todo item
     clearInput(); // clear input field
-    count++;
+    count++; // increase tasks counter
     const tasksLeft = document.querySelector("#tasksLeft");
     tasksLeft.textContent = count;
 
-    let localSet = localStorage.setItem("todos", JSON.stringify(todosList));
+    localStorage.setItem("todos", JSON.stringify(todosList));
   }
   return count;
 });
@@ -78,7 +78,7 @@ if (todosEntries.children) {
 
   console.log(unchecked);
 
-  // toggle strike-through style on completed task
+  // toggle strike-through style on completed task :: atm only works on page refresh
   unchecked.forEach((unchecked) => {
     unchecked.addEventListener("click", function (e) {
       e.target.classList.toggle("fa-square-check");

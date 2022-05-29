@@ -5,39 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Todos</h1>
-    <section>
-      <div class="addTodo">
-        <input
-          type="text"
-          id="todo"
-          name="todo"
-          placeholder="Write something to do..."
-        />
-        <button class="addBtn">+</button>
-      </div>
-      <ul class="todosEntries">
-        <!-- <li>
+    <div class="container">
+      <h1>Todos</h1>
+      <section>
+        <div class="addTodo">
+          <input
+            type="text"
+            id="todo"
+            name="todo"
+            placeholder="Write something to do..."
+          />
+          <button class="addBtn">+</button>
+        </div>
+        <ul class="todosEntries">
+          <!-- <li>
           <i class="fa-regular fa-square"></i>
           <i class="fa-regular fa-square-check"></i>
         </i>Task
             <i class="fa-solid fa-xmark del"></i>
         </li> -->
-      </ul>
+        </ul>
 
-      <div class="filter">
-        <span id="tasksLeft" class="tasks"></span>tasks left
-        <span id="all" class="active">All</span>
-        <span id="active">Active</span>
-        <span id="completed">Completed</span>
-      </div>
-
-      <!-- <span>&#9746;</span> -->
-      <!-- <span>&#9744;</span> -->
-    </section>
+        <div class="filter">
+          <span id="tasksLeft" class="tasks"></span>tasks left
+          <span id="all" class="active">All</span>
+          <span id="active">Active</span>
+          <span id="completed">Completed</span>
+        </div>
+      </section>
+    </div>
     <!-- <script src="js/main.js" type="module"></script> -->
     <script src="js/main_non_modular.js"></script>
     <script
