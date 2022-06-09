@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W05 Notes - Shaira Silos - WDD330</title>
+    <meta
+      name="description"
+      content="Week 8 Notes - Shaira Silos in WDD 330: Web Frontend Development II at BYUI"
+    />
+    <!-- STYLESHEETS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="../css/small.css" />
+    <link rel="stylesheet" href="..css/medium.css" />
+    <link rel="stylesheet" href="..css/large.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Shaira Silos - WDD330 Portfolio</h1>
+      <h2>Week 8 Notes</h2>
+
+      <section>
+        <h3>HTML5 and CSS3 for the Real world:</h3>
+
+        <h4>Chapter 8 - CSS Transforms and Transitions</h4>
+        <p><strong>&gt; Transform:&nbsp;</strong><br />- only work on block elements<br />- second transform will override the first; order matters</p>
+<p><strong>Types:</strong><br />- <strong>translate</strong> - move elements left, right, up or down.<br />transform: translate(x,y)<br />transform: translateX(45px)<br />transform: translateY(-30px)<br />- <strong>rotate</strong> - rotate around point of origin i.e. center<br />can be grads, radians, turns, degrees<br />transform: rotate(10deg);<br />-<strong> scale</strong>(x, y) - scales horizontally then vertically.&nbsp;<br />One value = used for both x and y values. scale(1) = element same size; scale(2) double proportion<br />No impact on document flow<br />transform: scale( 1.5, 0.25) or scaleX(x) or scaleY(y)<br />- <strong>skew</strong>(x, y) - specify skew along x and y axis<br />transform: skew(15deg, 4deg)</p>
+<p><strong>Changing origin:</strong><br />transform-origin: 0 0;</p>
+<p><strong>&gt; Transitions:</strong><br />- original state, final state, transition functions<br />- transition properties:&nbsp;<br />transition-property: transform, color; &nbsp;- defines CSS properties of the element that should be transitioned, 'all' default<br />transition-duration: 0.2s (optimum time) - how long transition will take;&nbsp;<br />transition-timing-function - control the pace of the transition - ease, linear, ease-in, ease-out, or ease-in-out&nbsp;<br />transition-delay - delay before transition begins</p>
+<p><strong>* Transition shorthand:</strong><br />transition: transform 0.2s ease-out 50ms (duration must precede delay)</p>
+<p><strong>* Multiple transition:</strong><br />transition: transform 0.2s ease-out 50ms, color 0.1s linear 50ms;<br />transition: all 0.2s ease-out 50ms</p>
+<p><strong>&gt; Animations:</strong><br />- <strong>Keyframes</strong><br />@keyframes moveRight {<br />&nbsp; &nbsp;from {<br />&nbsp; &nbsp; transform: translateX(-50%);<br />}&nbsp;<br />to {<br />transform: translateX(50%);<br />}<br />}</p>
+<p><strong>- Animation Properties:</strong><br />animation-name: appearDisappear<br />animation-duration: 300ms<br />animation-timing-function: ease/ease-in/linear/ease-out/ease-in-out or steps(4, end)<br />animation-iteration-count: infinite<br />animation-direction: alternate / alternate-reverse<br />animation-delay: 50ms;<br />animation-fill-mode: backwards / forwards / both / none<br />animation-play-state: running / paused</p>
+<p><strong>- Shorthand Animation:</strong><br />animation: 300ms ease-in alternate 5s backwards appearDisappear;</p>
+<p>&nbsp;</p>
+<p><strong>Chapter 12: Canvas, SVG, Drag and Drop</strong></p>
+<p><strong>&gt; Canvas</strong><br />HTML5's Canvas API - draw anything through JavaScript.<br />- can draw shapes, lines, arcs, text, gradients, patterns</p>
+<p>&lt;canvas id="myCanvas" class="myCanvas" width="200" height="200"&gt;<br />Sorry! Your browser doesn't support Canvas.<br />&lt;/canvas&gt;</p>
+<p><strong>* Drawing on the Canvas </strong>- grab hold of the canvas element on our page<br />var canvas = document.getElementByID("myCanvas");</p>
+<p><strong>* Getting the Context </strong>- place where drawing is rendered<br />var context = canvas.getContext("2d");</p>
+<p><strong>* Filling our Brush with Color</strong><br />strokeStyle / fillStyle = "color" / CanvasGradient obj / CanvasPattern obj</p>
+<p>context.strokeStyle = "red";<br />context.fillStyle = "rgba(0, 0, 255, 0.5)";</p>
+<p><strong>* Drawing a Rectangle to the Canvas</strong><br />fillRect/strokeRect = x, y, width, height</p>
+<p>context.fillRect(10, 10, 100, 100);<br />context.strokeRect(10, 10, 100, 100);</p>
+<p><strong>* Canvas coordinate system</strong> - top-to-bottom and left-to-right</p>
+<p><strong>* Variations on fillStyle</strong><br /><strong>CanvasPattern</strong> : createPattern(image to create pattern, how image should be repeated)</p>
+<p>repeat value: repeat, repeat-x repeat-y, no-repeat</p>
+<p>function drawPattern(){<br />&nbsp; &nbsp;var canvas = document.getElementById("demo2");<br />&nbsp; &nbsp;var context = canvas.getContext("2d");<br />&nbsp; &nbsp;context.strokeStyle = "red"<br />&nbsp;&nbsp;<br />&nbsp; &nbsp;var img = new Image();<br />&nbsp; &nbsp;img.src = "../images/bg-bike.png";<br />&nbsp; &nbsp;img.onload = function(){ // create pattern once image is fully loaded by the browser<br />&nbsp; &nbsp; var pattern = context.createPattern(img, "repeat");<br />&nbsp; &nbsp; context.fillStyle = pattern;<br />&nbsp; &nbsp; context.fillRect(10, 10, 100, 100);<br />&nbsp; &nbsp; context.strokeRect(10, 10, 100, 100);<br />&nbsp; &nbsp;};<br />}</p>
+<p><strong>CanvasGradient</strong> : createLinearGradient() or createRadialGradient()<br />x0 y0: starting location, x1 y1 ending location<br />origin: (0,0) top to (0,200) bottom</p>
+<p>addColorStop()<br />offset = 0 (start of gradient), 1 (end of gradient)</p>
+<p>function drawGradient(){<br />&nbsp; &nbsp; var gradient = context.createLinearGradient(0, 0, 0, 200);<br />&nbsp; &nbsp; gradient.addColorStop(0, "blue");<br />&nbsp; &nbsp; gradient.addColorStop(1, "white");<br />&nbsp; &nbsp; context.fillStyle = gradient;<br />&nbsp; &nbsp; context.fillRect(10, 10, 100, 100)<br />&nbsp; &nbsp; context.strokeRect(10, 10, 100, 100);s<br />}</p>
+<p><strong>* Drawing Other Shapes by Creating Paths</strong><br /><strong>Paths -</strong> blueprint for lines, arcs, and shapes</p>
+<p>function drawCircle(canvas) {<br />&nbsp; &nbsp;var canvas = document.getElementById("myCanvas");<br />&nbsp; &nbsp;var context = canvas.getContext("2d");<br />&nbsp; &nbsp;context.beginPath();<br />&nbsp; &nbsp;context.arc(50, 50, 30, 0, Math.PI*2, true);<br />&nbsp; &nbsp;context.closePath();<br />&nbsp; &nbsp;context.strokeStyle = "red";<br />&nbsp; &nbsp;context.fillStyle = "blue";<br />&nbsp; &nbsp;context.lineWidth = 3;<br />&nbsp; &nbsp;context.fill();<br />&nbsp; &nbsp;context.stroke();<br />}</p>
+<p><strong>arc</strong>(x, y, radius, startAngle, endAngle, anticlockwise)<br />x, y : where you want the arc's path to begin<br />startAngle, endAngle : start and end angles along the circle's circumference that you want to draw<br />arc angle: radian; circle 2PI<br />anti-clockwise: optional; true; otherwise clockwise : false</p>
+<p><strong>* Saving Canvas Drawings</strong><br />toDataURL - save drawing to local; creates URL with image in it PNG/JPEG</p>
+<p>&lt;button name="saveButton" id="savebutton"&gt;Save Drawing&lt;/button&gt;</p>
+<p>function saveDrawing(){<br />&nbsp; &nbsp;var canvas5 = document.getElementByID("demo5");<br />&nbsp; &nbsp;window.open(canvas5.toDataURL("image/png"));<br />}</p>
+<p>var button = document.getElementById("saveButton");<br />button.addEvenetListener("click", saveDrawing, false);</p>
+<p><strong>* Drawing an Image to the Canvas</strong></p>
+<p>&lt;canvas width="200" height="200" id="demo6" class="myCanvas"&gt;<br />Sorry! Your browser doesn't support Canvas.<br />&lt;/canvas&gt;<br />&lt;img src="images/html5-logo.png" id="myImageElem"&gt;</p>
+<p>window.addEventListener("load", drawImageToCanvas, false);</p>
+<p>function drawImageToCanvas(){<br />&nbsp; &nbsp;var canvas = document.getElementById("demo6");<br />&nbsp; &nbsp;var context = canvas.getContext("2d");<br />&nbsp; &nbsp;var image = document.getElementById("myImageElem");<br />&nbsp; &nbsp;context.drawImage(image, 0, 0); //method to redraw image into the top-left canvas<br />}</p>
+<p><strong>* Manipulating Images</strong><br />context.getImageData : returns width, height, and data(array : rgba)</p>
+<p><strong>&gt; SVG : Scalable Vector Graphics</strong><br />viewBox : starting location, width, height<br />&lt;svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400"&gt;<br />&nbsp; &nbsp;&lt;circle cx="50" cy="50" r="25" fill="red"/&gt;<br />&lt;/svg&gt;</p>
+<p>http://inkscape.org - open source tool to make SVG images<br />Raphael - open-source JS library that makes drawing/animating with SVG much easier</p>
+<p><strong>&gt; Drag &amp; Drop</strong><br />&lt;img ... draggable="true" /&gt; : not a boolean</p>
+<p><strong>* DataTransfer Object</strong><br />- the type of data we&rsquo;re saving of the draggable element<br />- the value of the data itself</p>
+<p>mouse.addEventListener("dragstart", function (event) {<br />event.dataTransfer.setData("text/plain", this.id);<br />});</p>
+<p>var cat = document.getElementById("cat");<br />cat.addEventListener("dragover", function(event) {<br />event.preventDefault();<br />});</p>
+<p>cat.addEventListener("drop", function(event) {<br />var mouseHash = {<br />mouse1: 'NOMNOMNOM',<br />mouse2: 'Meow',<br />mouse3: 'Purrrrrr ...'<br />};</p>
+      </section>
+    </main>
+    <footer>&copy; 2022 | Shaira Silos</footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
