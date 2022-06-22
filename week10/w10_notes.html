@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W10 Notes - Shaira Silos - WDD330</title>
+    <meta
+      name="description"
+      content="Week 10 Notes - Shaira Silos in WDD 330: Web Frontend Development II at BYUI"
+    />
+    <!-- STYLESHEETS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="../css/small.css" />
+    <link rel="stylesheet" href="..css/medium.css" />
+    <link rel="stylesheet" href="..css/large.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Shaira Silos - WDD330 Portfolio</h1>
+      <h2>Week 10 Notes</h2>
+
+      <section>
+        <h3>MDN: Validating Forms</h3>
+        <p><strong>Client-side validation</strong> - an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away</p>
+<p><strong>3 Main Reasons:</strong><br />- Right Data, Right Format<br />- Protect user's data<br />- Protect ourselves</p>
+<p><strong>Different Types of Client-Side Validation:</strong><br />- <strong>Built-in form validation</strong>: HTML5 form validation features, better performance, not as customizable as JS<br />- <strong>JavaScript:</strong> customizable</p>
+<p><strong>&gt; Built-in form validation:</strong><br />- required<br />- minlength and maxlength: textual data<br />- min and max: numerical input data<br />- type: number/email etc.<br />- pattern: regular expression</p>
+<p>* Errors: matches :invalid CSS pseudo class<br />badInput, patternMismatch, rangeOverflow, rangeUnderflow, stepMismatch, tooLong, tooShort, typeMismatch, valueMissing, customError</p>
+<p><strong>&gt; Validating forms using JavaScript</strong><br />- <strong>Constraint Validation API:</strong>&nbsp;<br />Element DOM interfaces i.e. HTMLButtonElement, HTMLFieldSetElement, HTMLInputElement etc<br />Methods i.e. checkValidity(), reportValidity(), setCustomValidity(message) etc.</p>
+
+<hr />
+
+<h3>MDN: Using Fetch API</h3><br />The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.</p>
+<p><strong>Basic Fetch setup:</strong><br />fetch('http://example.com/movies.json')<br />&nbsp; .then(response =&gt; response.json())<br />&nbsp; .then(data =&gt; console.log(data));</p>
+<p><strong>&gt; Sending a request with credentials included</strong><br />add credentials: 'include' to the init object you pass to the fetch() method.</p>
+<p><strong>&gt; Uploading JSON data</strong><br />Use fetch() to POST JSON-encoded data.</p>
+<p><strong>&gt; Uploading a file</strong><br />Files can be uploaded using an HTML &lt;input type="file" /&gt; input element, FormData() and fetch().</p>
+<p><strong>&gt; Uploading multiple files</strong><br />Files can be uploaded using an HTML &lt;input type="file" multiple /&gt; input element, FormData() and fetch().</p>
+<p><strong>&gt; Checking that the fetch was successful</strong><br />An accurate check for a successful fetch() would include checking that the promise resolved, then checking that the Response.ok property has a value of true.&nbsp;</p>
+<p><strong>&gt; Supplying your own request object</strong><br />Using the Request() constructor, pass that in as a fetch() method argument</p>
+<p><strong>&gt; Headers</strong><br />The Headers interface allows you to create your own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values</p>
+<p><strong>&gt; Guard</strong><br />- affects which mutation operations are allowed on the headers object<br />- none, request, request-no-cors, response, immutable</p>
+<p><strong>&gt; Response objects</strong><br />As you have seen above, Response instances are returned when fetch() promises are resolved.<br />- Response.status, Response.statusText, Response.ok</p>
+<p><strong>&gt; Body</strong><br />Both requests and responses may contain body data. A body is an instance of any of the following types:<br />ArrayBuffer<br />TypedArray (Uint8Array and friends)<br />DataView<br />Blob<br />File<br />String, or a string literal<br />URLSearchParams<br />FormData</p>
+<p><strong>&gt; Feature detection</strong><br />Fetch API support can be detected by checking for the existence of Headers, Request, Response or fetch() on the Window or Worker scope.</p>
+      </section>
+    </main>
+    <footer>&copy; 2022 | Shaira Silos</footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
