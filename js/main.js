@@ -41,7 +41,6 @@ const projectList = [
     label: "Week 10 Notes",
     url: "week10/index.html",
   },
-  
 ];
 
 // let projLabel = projectList[0].label;
@@ -65,4 +64,3 @@ function addProject(item) {
   li.textContent = projLabel + " - ";
   li.appendChild(link);
 }
-
