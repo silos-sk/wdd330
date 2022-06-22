@@ -41,6 +41,10 @@ const projectList = [
     label: "Week 10 Notes",
     url: "week10/index.html",
   },
+  {
+    label: "Project: HP App",
+    url: "hp_app/index.html",
+  },
 ];
 
 // let projLabel = projectList[0].label;
