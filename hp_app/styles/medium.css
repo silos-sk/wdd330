@@ -1,0 +1,35 @@
+@media only screen and (min-width: 32.5em) {
+    /* .result{
+        margin: 10px;
+        height: 400px;
+        width: 300px;
+    } */
+
+    #hp_result p {
+        font-size: 2.1rem;
+    }
+
+    #hp_name {
+        font-size: 3rem;
+        text-align: center;
+        top: -.2rem;
+        letter-spacing: 1rem;
+      }
+
+    .house {
+    top: -0.5rem;
+    letter-spacing: 0.8rem;
+    font-size: 1.2rem;
+    }
+
+    button {
+    font-size: 1.5rem;
+    padding: 5px;
+    width: 250px;
+    }
+    
+    footer {
+    font-size: 1rem;
+    }
+      
+}
