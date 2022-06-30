@@ -31,11 +31,12 @@ function getRandomHp() {
       const hpImg = data[randKey].image;
       const hpHouse = data[randKey].house;
       const hpDob = data[randKey].dateOfBirth;
-      const hpAge = 2011 - data[randKey].yearOfBirth;
+      const hpAge = 1996 - data[randKey].yearOfBirth;
       const hpAncestry = data[randKey].ancestry;
       const hpPatronus = data[randKey].patronus;
       const hpWand = data[randKey].wand.core;
       const hpActor = data[randKey].actor;
+      const yearOfBirth = data[randKey].yearOfBirth;
 
       // Run random HP character function again if encountered hpImg or hpName are empty
       if (hpImg == "" || hpName == "") {
@@ -52,7 +53,11 @@ function getRandomHp() {
         hp_wand.textContent = hpWand.toUpperCase();
         hp_actor.textContent = hpActor.toUpperCase();
 
+        if (yearOfBirth === ""){
+          hp_age.textContent = "";
+        }
 
+        console.log(yearOfBirth)
 
         if (hp_house.textContent === "SLYTHERIN"){
           house("rgba(8, 147, 47, 0.545)")
