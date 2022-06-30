@@ -7,6 +7,8 @@ const hp_ancestry = document.getElementById("ancestry");
 const hp_patronus = document.getElementById("patronus");
 const hp_wand = document.getElementById("wand");
 const hp_actor = document.getElementById("actor");
+const side = document.querySelectorAll(".side");
+const result = document.querySelector(".result");
 
 
 
@@ -49,6 +51,32 @@ function getRandomHp() {
         hp_patronus.textContent = hpPatronus.toUpperCase();
         hp_wand.textContent = hpWand.toUpperCase();
         hp_actor.textContent = hpActor.toUpperCase();
+
+
+
+        if (hp_house.textContent === "SLYTHERIN"){
+          house("rgba(8, 147, 47, 0.545)")
+          // result.style.borderColor = "rgba(8, 147, 47, 0.3)"
+        } else if (hp_house.textContent === "GRYFFINDOR"){
+          house("rgba(147, 5, 20, 0.54)")
+        } else if (hp_house.textContent === "HUFFLEPUFF"){
+          house("rgba(242, 226, 5, 0.54)")
+          // result.style.borderColor = "rgba(242, 226, 5, 0.3)"
+        } else if (hp_house.textContent === "RAVENCLAW"){
+          house("rgba(4,19,85, 0.54)")
+          // result.style.borderColor = "rgba(3, 12, 145, 0.3)"
+        } else {
+          house("rgb(202, 138, 36, 0.54)")
+        }
+
+        function house(color) {
+          var elements = document.getElementsByClassName('side'); // get all elements
+          for(var i = 0; i < elements.length; i++){
+            elements[i].style.backgroundColor = color;
+            elements[i].style.borderColor = color;
+          }
+        }
+
         
       }
     });
