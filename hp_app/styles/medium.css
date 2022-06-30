@@ -5,21 +5,64 @@
         width: 300px;
     } */
 
+    main {
+        width: 500px;
+    }
+
     #hp_result p {
         font-size: 2.1rem;
     }
 
     #hp_name {
-        font-size: 3rem;
+        font-size: 1.7rem;
         text-align: center;
         top: -.2rem;
         letter-spacing: 1rem;
+        margin-top: 2rem;
+       
+      }
+
+    .card {
+    display: grid;
+    width: 200px;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-areas: 
+        "bday result patronus"
+        "age result wand"
+        "ancestry result actor"
+    ;
+    grid-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    }
+
+    .side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 189, 107, 0.544) 23.8%,
+        rgb(202, 138, 36) 92%
+    );
+    height: 3.5rem;
+    width: 100px;
+    border: 1px solid rgba(255, 200, 0, 0.452);
+    border-radius: rem;
+    font-size: 0.7rem;
+    color: #fff;
+    letter-spacing: 0.2rem;
       }
 
     .house {
-    top: -0.5rem;
+    top: 0.2rem;
     letter-spacing: 0.8rem;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     }
 
     button {

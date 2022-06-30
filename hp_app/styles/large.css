@@ -30,6 +30,18 @@
     font-size: 2rem;
   }
 
+  #hp_name {
+    font-size:3rem;
+  }
+
+  .house{
+    font-size: 1rem;
+  }
+
+  .side{
+    font-size: 0.9rem;
+  }
+
   button {
     font-size: 1.5rem;
     padding: 5px;

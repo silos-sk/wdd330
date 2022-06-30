@@ -29,7 +29,7 @@ function getRandomHp() {
       const hpImg = data[randKey].image;
       const hpHouse = data[randKey].house;
       const hpDob = data[randKey].dateOfBirth;
-      const hpAge = currentYear - data[randKey].yearOfBirth;
+      const hpAge = 2011 - data[randKey].yearOfBirth;
       const hpAncestry = data[randKey].ancestry;
       const hpPatronus = data[randKey].patronus;
       const hpWand = data[randKey].wand.core;

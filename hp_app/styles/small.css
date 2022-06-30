@@ -29,7 +29,7 @@ body {
 }
 
 main {
-  width: 500px;
+  width: 375px;
 }
 
 .results {
@@ -94,7 +94,7 @@ main {
 .card{
   display: grid;
   width: 200px;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
     "bday result patronus"
     "age result wand"
@@ -134,23 +134,7 @@ main {
 }
 
 .side{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0.5rem;
-  background-image: linear-gradient(
-    180deg,
-    rgba(252, 189, 107, 0.544) 23.8%,
-    rgb(202, 138, 36) 92%
-  );
-  height: 4rem;
-  width: 4rem;
-  border: 1px solid rgba(255, 200, 0, 0.452);
-  border-radius: 3rem;
-  font-size: 0.7rem;
-  color: #fff;
-  letter-spacing: 0.2rem;
+  display: none;
 }
 
 .buttons {
