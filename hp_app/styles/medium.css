@@ -13,13 +13,53 @@
         font-size: 2.1rem;
     }
 
+    #hp_result img{
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+    box-shadow:rgba(255, 255, 255, 0.947);
+    transition: width 2s, height 2s, box-shadow 2s;
+    }
+
+    #hp_result img:hover{
+        width: 102%;
+        height: 102%;
+        box-shadow:rgba(255, 255, 255, 0.947);
+    }
+
+    @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+    @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+    @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+    @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+    @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
     #hp_name {
         font-size: 1.7rem;
         text-align: center;
         top: -.2rem;
         letter-spacing: 1rem;
         margin-top: 2rem;
-       
       }
 
     .card {
@@ -45,6 +85,7 @@
     grid-gap: 0.5rem;
     text-align: center;
     padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.201);
     /* background-image: linear-gradient(
         180deg,
         rgba(252, 189, 107, 0.544) 23.8%,
@@ -58,7 +99,15 @@
     color: #fff;
     letter-spacing: 0.2rem;
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.947);
-      }
+    transition: width 2s, height 2s, background-color 2s, font-size 2s, transform 2s;
+    }
+
+    .side:hover {
+    /* transform: rotate(360deg); */
+    height: 100px;
+    width: 110px;
+    font-size: 1rem;
+    }
 
     .house {
     top: 0.2rem;
