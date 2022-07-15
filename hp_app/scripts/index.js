@@ -15,57 +15,69 @@ hp_btn.addEventListener("click", getRandomHp);
 
 // Get Random Harry Potter (HP) Character from API
 function getRandomHp() {
-  getJSON("https://hp-api.herokuapp.com/api/characters")
-    .then((data) => {
-      // Call random key generator function
-      const randKey = getRandKey(data);
+  getJSON("https://hp-api.herokuapp.com/api/characters").then(
+    (data) => {
+      const keysNotEmpty = [];
+      for (const i in data) {
+        let key = i;
+        let val = data[i]; //access each hp character
 
-      // Assign variables to data object properties
-      const hpName = data[randKey].name;
-      const hpImg = data[randKey].image;
-      const hpHouse = data[randKey].house;
-      const hpDob = data[randKey].dateOfBirth;
-      const hpAge = 1996 - data[randKey].yearOfBirth;
-      const hpAncestry = data[randKey].ancestry;
-      const hpPatronus = data[randKey].patronus;
-      const hpWand = data[randKey].wand.core;
-      const hpActor = data[randKey].actor;
-      const yearOfBirth = data[randKey].yearOfBirth;
-
-      // Run random HP character function again if encountered hpImg or hpName are empty
-      if (hpImg == "" || hpName == "") {
-        getRandomHp();
-      } else {
-        // Display HP character name and image on HTML
-        hp_name.textContent = hpName;
-        hp_result.innerHTML = `<img src=${hpImg} alt=${hpName} />`;
-        hp_house.innerHTML = hpHouse.toUpperCase();
-        hp_bday.textContent = hpDob;
-        hp_age.textContent = hpAge;
-        hp_ancestry.textContent = hpAncestry.toUpperCase();
-        hp_patronus.textContent = hpPatronus.toUpperCase();
-        hp_wand.textContent = hpWand.toUpperCase();
-        hp_actor.textContent = hpActor.toUpperCase();
-
-        if (yearOfBirth === ""){
-          hp_age.textContent = "";
+        // if character has an image link - add key (number) to keysNotEmpty array
+        if (val.image != "") {
+          keysNotEmpty.push(key);
         }
-
-        if (hp_house.textContent === "SLYTHERIN"){
-          house("rgba(8, 147, 47, 0.545)", "side")
-          // result.style.borderColor = "rgba(8, 147, 47, 0.3)"
-        } else if (hp_house.textContent === "GRYFFINDOR"){
-          house("rgba(147, 5, 20, 0.54)", "side")
-        } else if (hp_house.textContent === "HUFFLEPUFF"){
-          house("rgba(242, 226, 5, 0.54)", "side")
-          // result.style.borderColor = "rgba(242, 226, 5, 0.3)"
-        } else if (hp_house.textContent === "RAVENCLAW"){
-          house("rgba(4,19,85, 0.54)", "side")
-          // result.style.borderColor = "rgba(3, 12, 145, 0.3)"
-        } else {
-          house("rgb(202, 138, 36, 0.54)", "side")
-        }
-        
       }
-    });
-}
+
+      // Generate random number from keysNotEmpty array
+      let randKey = getRandKey(keysNotEmpty);
+
+      // Access data of character corresponding to the generated random key
+      let chars = data[randKey];
+
+      // Assign variables to character's data object properties
+      const hpName = chars.name;
+      const hpImg = chars.image;
+      const hpHouse = chars.house;
+      const hpDob = chars.dateOfBirth;
+      const hpAge = 1996 - chars.yearOfBirth;
+      const hpAncestry = chars.ancestry;
+      const hpPatronus = chars.patronus;
+      const hpWand = chars.wand.core;
+      const hpActor = chars.actor;
+      const yearOfBirth = chars.yearOfBirth;
+
+      // Display HP character name and image on HTML
+      hp_name.textContent = hpName;
+      hp_result.innerHTML = `<img src=${hpImg} alt=${hpName} />`;
+      hp_house.innerHTML = hpHouse.toUpperCase();
+      hp_bday.textContent = hpDob;
+      hp_age.textContent = hpAge;
+      hp_ancestry.textContent = hpAncestry.toUpperCase();
+      hp_patronus.textContent = hpPatronus.toUpperCase();
+      hp_wand.textContent = hpWand.toUpperCase();
+      hp_actor.textContent = hpActor.toUpperCase();
+
+      // if the year of birth is empty, do not display any text on html
+      if (yearOfBirth === "") {
+        hp_age.textContent = "";
+      }
+
+      // change color of side info tiles according to character's house
+      if (hp_house.textContent === "SLYTHERIN") {
+        house("rgba(8, 147, 47, 0.545)", "side");
+        // Also change character image border color according to house
+        // hp_result.style.borderColor = "rgba(8, 147, 47, 0.3)"
+      } else if (hp_house.textContent === "GRYFFINDOR") {
+        house("rgba(147, 5, 20, 0.54)", "side");
+      } else if (hp_house.textContent === "HUFFLEPUFF") {
+        house("rgba(242, 226, 5, 0.54)", "side");
+        // hp_result.style.borderColor = "rgba(242, 226, 5, 0.3)"
+      } else if (hp_house.textContent === "RAVENCLAW") {
+        house("rgba(4,19,85, 0.54)", "side");
+        // hp_result.style.borderColor = "rgba(3, 12, 145, 0.3)"
+      } else {
+        house("rgb(202, 138, 36, 0.54)", "side");
+      }
+    } // End of .then((data) => {
+  ); // End of .then((data)
+} // End of getRandomHp()
