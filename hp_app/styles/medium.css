@@ -19,7 +19,7 @@
     -moz-animation: fadeIn 2s;
     -o-animation: fadeIn 2s;
     -ms-animation: fadeIn 2s;
-    transition: width 1s, height 1s, box-shadow 2s, filter 2s, border-radius 1s;
+    transition: width 1s, height 1s, box-shadow 1s, filter 1s, border-radius 1s;
     }
 
     #hp_result img:hover{
