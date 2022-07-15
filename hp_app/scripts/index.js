@@ -17,19 +17,19 @@ hp_btn.addEventListener("click", getRandomHp);
 function getRandomHp() {
   getJSON("//hp-api.herokuapp.com/api/characters").then(
     (data) => {
-      const keysNotEmpty = [];
+      const keysWithImage = [];
       for (const i in data) {
         let key = i;
         let val = data[i]; //access each hp character
 
         // if character has an image link - add key (number) to keysNotEmpty array
-        if (val.image != "") {
-          keysNotEmpty.push(key);
+        if (val.image != "" && key != 25) {
+          keysWithImage.push(key);
         }
       }
 
       // Generate random number from keysNotEmpty array
-      let randKey = getRandKey(keysNotEmpty);
+      let randKey = getRandKey(keysWithImage);
 
       // Access data of character corresponding to the generated random key
       let chars = data[randKey];
@@ -47,7 +47,7 @@ function getRandomHp() {
       const yearOfBirth = chars.yearOfBirth;
 
       // change image url http to https
-      let imgUrl = hpImg.replace('http', 'https'); 
+      let imgUrl = hpImg.replace("http", "https");
 
       // Display HP character name and image on HTML
       hp_name.textContent = hpName;
