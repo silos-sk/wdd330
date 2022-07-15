@@ -15,7 +15,7 @@ hp_btn.addEventListener("click", getRandomHp);
 
 // Get Random Harry Potter (HP) Character from API
 function getRandomHp() {
-  getJSON("https://hp-api.herokuapp.com/api/characters").then(
+  getJSON("//hp-api.herokuapp.com/api/characters").then(
     (data) => {
       const keysNotEmpty = [];
       for (const i in data) {
@@ -46,9 +46,12 @@ function getRandomHp() {
       const hpActor = chars.actor;
       const yearOfBirth = chars.yearOfBirth;
 
+      // change image url http to https
+      let imgUrl = hpImg.replace('http', 'https'); 
+
       // Display HP character name and image on HTML
       hp_name.textContent = hpName;
-      hp_result.innerHTML = `<img src=${hpImg} alt=${hpName} />`;
+      hp_result.innerHTML = `<img src=${imgUrl} alt=${hpName} />`;
       hp_house.innerHTML = hpHouse.toUpperCase();
       hp_bday.textContent = hpDob;
       hp_age.textContent = hpAge;
