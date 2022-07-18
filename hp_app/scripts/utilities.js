@@ -14,7 +14,7 @@ export function getJSON(url) {
 
 // Generate random key number
 export function getRandKey(data) {
-    let randKey = parseInt(Math.floor(Math.random() * data.length + 1));
+    let randKey = parseInt(Math.floor(Math.random() * data.length));
     return randKey;
   }
 
