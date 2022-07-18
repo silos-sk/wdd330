@@ -22,13 +22,13 @@ function getRandomHp() {
         let key = i;
         let val = data[i]; //access each hp character
 
-        // if character has an image link - add key (number) to keysNotEmpty array
+        // if character has an image link - add key (number) to keysWithImage array
         if (val.image != "" && key != 25) {
           keysWithImage.push(key);
         }
       }
 
-      // Generate random number from keysNotEmpty array
+      // Generate random number from keysWithImage array
       let randKey = getRandKey(keysWithImage);
 
       // Access data of character corresponding to the generated random key
