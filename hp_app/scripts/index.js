@@ -1,6 +1,18 @@
 import { house } from "./utilities.js";
 import { Character } from "./character.js";
 
+// Project Info
+const icon = document.querySelector(".fa-info-circle");
+const info = document.querySelector(".info");
+const hp_title = document.querySelector("#hp_title")
+function projInfo() {
+  info.classList.toggle("expand");
+  hp_title.classList.toggle("hide")
+}
+
+icon.addEventListener("click", projInfo);
+
+// Harry Potter Character Generator
 const jsonUrl = "//hp-api.herokuapp.com/api/characters";
 
 const hp_btn = document.getElementById("hp_btn");

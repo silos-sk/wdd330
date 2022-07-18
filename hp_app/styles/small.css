@@ -49,11 +49,42 @@ main {
   border: 1rem double rgba(243, 182, 15, 0.363);
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  gap: 0;
   align-items: center;
   justify-content: center;
   margin: 10px;
   height: 300px;
   width: 200px;
+}
+
+i.fa-info-circle {
+  color: rgba(255, 255, 255, 0.71);
+  font-size: 1.3rem;
+  padding-top: 1rem;
+}
+
+.info {
+  display: none;
+}
+
+.expand {
+  display: block;
+  margin: 1.5rem auto;
+  height: 300px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+}
+
+.expand ul{
+  text-align: left;
+}
+
+.hide{
+  display: none;
 }
 
 .result img {
