@@ -4,10 +4,10 @@ import { Character } from "./character.js";
 // Project Info
 const icon = document.querySelector(".fa-info-circle");
 const info = document.querySelector(".info");
-const hp_title = document.querySelector("#hp_title")
+const hp_title = document.querySelector("#hp_title");
 function projInfo() {
   info.classList.toggle("expand");
-  hp_title.classList.toggle("hide")
+  hp_title.classList.toggle("hide");
 }
 
 icon.addEventListener("click", projInfo);
@@ -79,7 +79,7 @@ function renderHpChar() {
     // Also change character image border color according to house
     // hp_result.style.borderColor = "rgba(8, 147, 47, 0.3)"
   } else if (hp_house.textContent === "GRYFFINDOR") {
-    house("rgba(147, 5, 20, 0.54)", "side"); // Color: Orange
+    house("rgba(147, 5, 20, 0.54)", "side"); // Color: Red
   } else if (hp_house.textContent === "HUFFLEPUFF") {
     house("rgba(242, 226, 5, 0.54)", "side"); // Color: Yellow
     // hp_result.style.borderColor = "rgba(242, 226, 5, 0.3)"
