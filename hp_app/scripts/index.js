@@ -75,16 +75,16 @@ function renderHpChar() {
 
   // change color of side info tiles according to character's house
   if (hp_house.textContent === "SLYTHERIN") {
-    house("rgba(8, 147, 47, 0.545)", "side"); //Color: Green
+    house("rgba(8, 147, 47, 0.545)", "side"); // Color: Green
     // Also change character image border color according to house
     // hp_result.style.borderColor = "rgba(8, 147, 47, 0.3)"
   } else if (hp_house.textContent === "GRYFFINDOR") {
-    house("rgba(147, 5, 20, 0.54)", "side"); //Color: Gold
+    house("rgba(147, 5, 20, 0.54)", "side"); // Color: Orange
   } else if (hp_house.textContent === "HUFFLEPUFF") {
-    house("rgba(242, 226, 5, 0.54)", "side");
+    house("rgba(242, 226, 5, 0.54)", "side"); // Color: Yellow
     // hp_result.style.borderColor = "rgba(242, 226, 5, 0.3)"
   } else if (hp_house.textContent === "RAVENCLAW") {
-    house("rgba(4,19,85, 0.54)", "side");
+    house("rgba(4,19,85, 0.54)", "side"); // Color: Blue
     // hp_result.style.borderColor = "rgba(3, 12, 145, 0.3)"
   } else {
     house("rgb(202, 138, 36, 0.54)", "side");
