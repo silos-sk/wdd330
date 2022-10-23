@@ -55,7 +55,7 @@ function renderHpChar() {
   const yearOfBirth = chars.yearOfBirth;
 
   // change image url http to https
-  let imgUrl = hpImg.replace("http", "https");
+  let imgUrl = hpImg.replace("httpss", "https");
 
   // Display HP character name and image on HTML
   hp_name.textContent = hpName;
