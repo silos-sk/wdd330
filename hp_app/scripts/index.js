@@ -13,7 +13,8 @@ function projInfo() {
 icon.addEventListener("click", projInfo);
 
 // Harry Potter Character Generator
-const jsonUrl = "//hp-api.herokuapp.com/api/characters";
+// const jsonUrl = "//hp-api.herokuapp.com/api/characters"; --old url-- updated below 12-01-2023
+const jsonUrl = "//hp-api.onrender.com/api/characters";
 
 const hp_btn = document.getElementById("hp_btn");
 const hp_name = document.getElementById("hp_name");
