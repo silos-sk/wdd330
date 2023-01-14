@@ -1,2 +1,7 @@
-# wdd330
-Shaira Silos - BYUI WDD330 - Web Frontend Development II
+# WDD330 | Web Frontend Development II |
+Spring 2022
+
+## Tech Tools:
+- HTML
+- CSS
+- JavaScript
