@@ -1,4 +1,4 @@
-# WDD330 | Web Frontend Development II |
+# WDD330 | Web Frontend Development II 
 Spring 2022
 
 ## Tech Tools:
